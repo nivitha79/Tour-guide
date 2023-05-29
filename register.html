@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+<head>
+<style>
+*{font-size:18px;box-shadow: 10px 5px 5px white;}
+input[type=email],[type=password],[type="text"],[type="tel"],select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.si{
+width: 100%;
+background-color:#FFF0F0;
+height: 45px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+font-weight:bold}
+</style>
+<script>
+	function validate()
+	{
+		var FirstName=document.login.FirstName.value;
+		var LastName=document.login.LastName.value;
+		var Email=document.login.Email.value;
+		var Password=document.login.Password.value;
+		var MobileNumber=document.login.MobileNumber.value;
+		if(FirstName=="")
+		{
+			alert("Please Enter your Firstname");
+			document.login.FirstName.focus();
+			return false;
+		}
+		if(LastName=="")
+		{
+			alert("Please Enter your Lastname");
+			document.login.LastName.focus();
+			return false;
+		}
+		if(Email=="")
+		{
+			alert("Please Enter your Email");
+			document.login.Email.focus();
+			return false;
+		}
+		if(Password=="")
+		{
+			alert("Please Enter your Password");
+			document.login.Password.focus();
+			return false;
+		}
+		if(MobileNumber=="")
+		{
+			alert("Please Enter your MobileNumber");
+			document.login.MobileNumber.focus();
+			return false;
+		}
+		return true;	
+	}
+</script>
+</head>
+<body>
+<h1 style="font-size:29px;color:white;background-color:#03a9f4;height: 45px;border-radius: 4px;">User Registration</h1>
+
+<form action="registration.jsp" name="login" method="post" onsubmit="return validate()">
+	<table align="center">
+	<tr>
+		<th><label for="FirstName">First Name</label></th>
+		<td><input type="text" name="FirstName" id="FirstName" placeholder="Enter your First name" size="30" required ></td>
+	</tr>
+	<tr>
+		<th><label for="LastName">Last Name</label></th>
+		<td><input type="text" name="LastName" id="LastName" placeholder="Enter your Last name" size="30" required ></td>
+	</tr>
+	<tr>
+		<th><label for="Email">Email Address</label></th>
+		<td><input type="email" name="Email" id="Email" placeholder="Enter your active email id" size="30" required ></td>
+	</tr>
+	<tr>
+		<th><label for="Password">Password</label></th>
+		<td><input type="password" name="Password" id="Password" size="30" required ></td>
+	</tr>
+	<tr>
+		<th><label for="MobileNumber">Mobile Number</label></th>
+		<td><input type="tel" name="MobileNumber" id="MobileNumber" placeholder="For contact" pattern="[0-9]{10}" size="30" required ></td>
+	</tr>
+	<tr>
+		<td colspan=2><center><input type="submit"  value="Register" class="si"></center><td>
+	</tr>
+	</table>
+</form>
+</body>
+</html>
+

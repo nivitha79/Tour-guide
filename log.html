@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+<head>
+<style>
+input[type=email],[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#example1 {
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: inline-block;
+  box-shadow: 10px 5px 5px white;
+  margin-top:10%;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.si{
+width: 100%;
+background-color:#FFFFF0;
+height: 45px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+font-weight:bold
+}
+</style>
+<script>
+	function validation()
+	{
+		var Email=document.entry.Email.value;
+		var Password=document.entry.Password.value;
+		if(Email=="")
+		{
+			alert("Please Enter your Email");
+			document.entry.Email.focus();
+			return false;
+		}
+		if(Password=="")
+		{
+			alert("Please Enter your Password");
+			document.entry.Password.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+
+</head>
+<body>
+<h2 style="font-size:29px;color:white;background-color:#03a9f4;height: 45px;border-radius: 4px;">LOGIN</h2>
+<center>
+<form action="loginservlet.jsp" name="entry"  method="post" onsubmit="return validation()">
+	<table  id="example1">
+        <tr>
+		<td style="background-color:pink">
+			<h2>User Log In<h2>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="email"  placeholder="email" name="email" id="email" size="60" required /><br>
+			<input type="password" placeholder="Password" id="password" name="password" size="60" required />
+		</td>
+	</tr>
+	<tr>
+		<td style="align:center">
+			<input type="submit"  value="Login" size="40" class="si"/>
+		<td>
+	</tr>
+	<tr>
+		<td>
+		New User? <a href="register.html">Click Here</a> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Change Password<a href="Forgot Password.html">Click Here</a>
+		</td>
+	<tr>
+</table>
+</form>
+</center>
+</body>
+</html>
